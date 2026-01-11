@@ -1,0 +1,78 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Animated background */
+body {
+    font-family: ui-sans-serif, -apple-system, system-ui, Segoe UI,
+                 Helvetica, Apple Color Emoji, Arial, sans-serif,
+                 Segoe UI Emoji, Segoe UI Symbol;
+
+    color: #ececec;
+    min-height: 100vh;
+    padding-top: 70px; /* space for fixed nav */
+
+    background-color: rgb(29, 29, 29);
+    background-image: radial-gradient(circle, #292929 3px, transparent 1px);
+    background-size: 60px 60px;
+
+    animation: moveDots 10s linear infinite;
+}
+
+@keyframes moveDots {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 -20px;
+    }
+}
+
+/* Top Navigation Bar */
+#top_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+
+    background: rgba(29, 29, 29, 0.75);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+/* Nav links */
+#top_nav a {
+    text-decoration: none;
+    color: #ececec;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+#top_nav a:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+/* Demo content */
+.content {
+    padding: 40px;
+    font-size: 1.2rem;
+}
+
+.spacer {
+    width: 100%;
+    float: left;
+}
