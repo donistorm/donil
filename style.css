@@ -1,3 +1,4 @@
+
 /* Reset */
 * {
     box-sizing: border-box;
@@ -7,9 +8,7 @@
 
 /* Animated background */
 body {
-    font-family: ui-sans-serif, -apple-system, system-ui, Segoe UI,
-                 Helvetica, Apple Color Emoji, Arial, sans-serif,
-                 Segoe UI Emoji, Segoe UI Symbol;
+    font-family: 'DM Sans', sans-serif;
     /* Change selection colors */
     ::selection {
         background-color: #ececec;; /* highlight color */
@@ -79,11 +78,132 @@ body {
 
 /* Demo content */
 .content {
-    padding: 40px;
     font-size: 1.2rem;
+    display: flex;              /* enable flex layout */
+    flex-direction: column;     /* stack items vertically */
+    align-items: center;        /* center items horizontally */
+    justify-content: flex-start; /* optional, vertical alignment */
+    gap: 20px;                  /* spacing between children */
+    padding: 40px;
 }
 
 .spacer {
+    width: 100%;             /* full width */
+}
+
+
+/* Nav item wrapper */
+.nav-item {
+    position: relative;
+}
+
+/* Dropdown panel */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+
+    min-width: 220px;
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    background: rgba(29, 29, 29, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Dropdown links */
+.dropdown a {
+    color: #ececec;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.dropdown a:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
     width: 100%;
-    float: left;
+    height: 10px;
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+/* Icon hidden by default */
+.external-icon {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+/* Show icon only when link is hovered */
+.dropdown a:hover .external-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;    /* center the image horizontally */
+    position: relative;         /* for overlay-text positioning */
+}
+
+
+.overlay-text {
+    position: absolute;
+    top: 50%;    /* vertically center */
+    left: 50%;   /* horizontally center */
+    transform: translate(-50%, -50%); /* perfect centering */
+    text-align: center;
+    color: white;      /* text color */
+    font-size: 3rem;   /* adjust */
+    font-weight: bold; /* optional */
+    text-shadow: 0 0 8px rgba(0,0,0,0.7); /* makes text readable */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* initial state */
+    filter: brightness(95%) contrast(110%);
+
+    /* smooth animation for any filter changes */
+    transition: filter 0.5s ease; /* duration 0.5s, smooth easing */
+}
+
+/* hover state */
+.image-container:hover img {
+    filter: brightness(80%) contrast(180%);
 }
