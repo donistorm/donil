@@ -3,75 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Donil</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_outward" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_right" />
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="donil_logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="donil_logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="donil_logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="donil_logo.png">
+</head>
+
 </head>
 
 <body>
 
-<nav id="top_nav">
 
-        <div class="nav-item">
-            <a href="/">Home</a>
-        </div>
-
-        <div class="nav-item">
-            <a>Products</a>
-
-            <div class="dropdown">
-
-                <a href="/hallbase/">
-                    HallBase
-                    <span class="material-symbols-outlined external-icon" style="font-size: 1.1em; vertical-align: middle;">
-                        arrow_outward
-                    </span>
-                </a>
-                <a href="/databyte/">
-                    DataByte
-                    <span class="material-symbols-outlined external-icon" style="font-size: 1.1em; vertical-align: middle;">
-                        arrow_outward
-                    </span>
-                </a>
-
-            </div>
-        </div>
-    
-        <div class="nav-item">
-            <a href="/pricing/">Pricing
-                <span class="material-symbols-outlined external-icon" style="font-size: 1.1em; vertical-align: middle;">
-                    arrow_outward
-                </span>
-            </a>
-        </div>
-
-        <div class="nav-item">
-            <a href="/about/">About</a>
-
-            <div class="dropdown">
-                <a href="https://example.com">Our Story</a>
-                <a href="https://example.com">Careers</a>
-            </div>
-        </div>
-
-        <div class="nav-item">
-            <a href="/contact/">Contact</a>
-        </div>
-
-    </nav>
-
-
-    <div class="spacer" style="height: 5%;"></div>
+    <div class="spacer" style="height: 2vh;"></div>
 
     <div class="content">
-        <p style="width: 100%; height: 15%; float: left; font-size: 5rem; text-align: center;">Donil</p>
-        <div class="spacer" style="height: 2%;"></div>
-        <p style="width: 100%; height: 15%; float: left; font-size: 1.4rem;text-align: center;">Create and explore new possibilties</p>
-    </div>
+        <p style="width: 100%; height: 15%; font-size: 4.5rem; text-align: center;">Welcome to Donil</p>
+        <div class="spacer" style="height: 10vh;"></div>
 
-    <div class="spacer" style="height: 8%;"></div>
+        <div style="width: 50%;">
+
+        <p style="width: 100%; height: 5vh; font-size: 1rem; text-align: center;">
+            Donil is an cloud quantum computing service that will allow for users to store information using a quantum computer.
+        </p>
+        <div class="spacer" style="height: 4vh;"></div>
+
+
+        <p style="width: 100%; height: 5vh; font-size: 1.1rem; text-align: center;">
+            If you are interested, enter the waitlist! Once the service is ready, you will recieve an email and your account will be made automatically.
+        </p>
+        <div class="spacer" style="height: 11vh;"></div>
+
+        <form class="email-form" id="emailForm">
+        <input placeholder="email" type="email" id="email" required>
+        <button type="submit">Sign Up
+            <span class="material-symbols-outlined external-icon" style="font-size: 1.1em; vertical-align: middle;">
+                chevron_right
+            </span>
+        </button>
+        </form>
+
+        </div>
+
+    </div>
+    
+    <script>
+    document.getElementById("emailForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // stop reload
+    
+        const email = document.getElementById("email").value;
+        console.log("Email submitted:", email);
+    });
+    </script>
+
 
 </body>
-
 </html>
-
